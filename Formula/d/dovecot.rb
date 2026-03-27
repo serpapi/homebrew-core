@@ -1,10 +1,9 @@
 class Dovecot < Formula
   desc "IMAP/POP3 server"
   homepage "https://dovecot.org/"
-  url "https://dovecot.org/releases/2.4/dovecot-2.4.2.tar.gz"
-  sha256 "2cd62e4d22b9fc1c80bd38649739950f0dbda34fbc3e62624fb6842264e93c6e"
+  url "https://dovecot.org/releases/2.4/dovecot-2.4.3.tar.gz"
+  sha256 "e0b30330fe51e47ecfcf641bc16041184d91bdd0ac3db789b7cef54e3a75ac9b"
   license all_of: ["BSD-3-Clause", "LGPL-2.1-or-later", "MIT", "Unicode-DFS-2016", :public_domain]
-  revision 1
 
   livecheck do
     url "https://dovecot.org/releases/"
@@ -42,19 +41,6 @@ class Dovecot < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "sqlite"
 
-  on_macos do
-    # TODO: Remove dependencies with patches
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-
-    # Backport fix for macOS build
-    patch do
-      url "https://github.com/dovecot/core/commit/0f3bd7404a5e09f087450255083a672a5f231a8a.patch?full_index=1"
-      sha256 "b78cdee49eff5f18858fe1a32c33c8f58bba63b0824546c2d8b7f1b9c2f50e25"
-    end
-  end
-
   on_linux do
     depends_on "libtirpc"
     depends_on "linux-pam"
@@ -65,8 +51,8 @@ class Dovecot < Formula
   end
 
   resource "pigeonhole" do
-    url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.2.tar.gz"
-    sha256 "c2f90cf2a0154f94842ce0d8cafc81f282d0f98dfc3b51c3b7c2385c53316f97"
+    url "https://pigeonhole.dovecot.org/releases/2.4/dovecot-pigeonhole-2.4.3.tar.gz"
+    sha256 "219c472a5fa3e6f7a6cb76ff5118bcbead73e14cd4157d3701425245756cb5f8"
 
     livecheck do
       formula :parent
