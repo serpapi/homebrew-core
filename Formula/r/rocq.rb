@@ -2,12 +2,11 @@ class Rocq < Formula
   desc "Proof assistant for higher-order logic"
   homepage "https://rocq-prover.org/"
   license "LGPL-2.1-only"
-  revision 1
   compatibility_version 1
 
   stable do
-    url "https://github.com/rocq-prover/rocq/releases/download/V9.1.1/rocq-9.1.1.tar.gz"
-    sha256 "35cd03fc4193969b1cce01190340e5c129c1ba8f02242a9e6dff4b83be118759"
+    url "https://github.com/rocq-prover/rocq/releases/download/V9.2.0/rocq-9.2.0.tar.gz"
+    sha256 "a45280ab4fbaac7540b136a6b073b4a6db15739ec1e149bded43fa6f4fc25f20"
 
     resource "stdlib" do
       url "https://github.com/rocq-prover/stdlib/releases/download/V9.0.0/stdlib-9.0.0.tar.gz"
